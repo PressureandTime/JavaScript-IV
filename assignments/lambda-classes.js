@@ -8,9 +8,6 @@
 // I am from Bedrock where name and location are the object's own props
 
 
-
-
-
 class Person {
   constructor(personAttributes) {
     this.name = personAttributes.name;
@@ -25,6 +22,19 @@ class Person {
 }
 
 
+const jimmy = new Person({
+  name: 'Jimmy',
+  location: 'Bedrock',
+  age: 44,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`,
+  specialty:'C',
+  grade: 'b',
+});
+
+console.log(jimmy.speak);
 
 // Now that we have a Person as our base class, we'll build our Instructor class.
 // Instructor uses the same attributes that have been set up by Person
@@ -39,24 +49,37 @@ class Person {
 // and logs out '{student.name} receives a perfect score on {subject}'
 
 
-
-class Instructor extends Person {
-  constructor(instructorAttributes) {
-    super(instructorAttributes);
-    this.specialty = instructorAttributes.specialty;
-    this.favLanguage = instructorAttributes.favLanguage;
-    this.catchPhrase = instructorAttributes.catchPhrase;
+class Student extends Person {
+  constructor(studentAttributes) {
+    super(studentAttributes);
+    this.specialty = studentAttributes.specialty;
+    this.favLanguage = studentAttributes.favLanguage;
+    this.catchPhrase = studentAttributes.catchPhrase;
+    this.subject=studentAttributes.subject;
   }
 
   demo() {
-    return `Today we are learning about ${this.favLanguage} and ${this.name}`;
+    return `Today we are learning about ${this.subject} and ${this.name}`;
   }
 }
 
 
+const fox = new Student({
+  name: 'Rocky',
+  location: 'Bedrock',
+  age: 44,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`,
+  specialty:'C',
+  grade: 'b',
+});
+
+console.log(fox.demo());
 
 
-// Now we need some students!
+
 // Student uses the same attributes that have been set up by Person
 // Student has the following unique props:
 // previousBackground i.e. what the Student used to do before Lambda School
@@ -64,17 +87,18 @@ class Instructor extends Person {
 // favSubjects. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
 // Student has the following methods:
 // listsSubjects a method that logs out all of the student's favoriteSubjects one by one.
-// PRAssignment a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
-// sprintChallenge similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+// PRAssignment a method that receives a subject as an argument and logs out
+// that the student.name has submitted a PR for {subject}
+// sprintChallenge similar to PRAssignment but logs out student.name
+// has begun sprint challenge on {subject}
 
 
-
-class Student extends Person {
-  constructor(studentAttributes) {
-    super(studentAttributes);
-    this.previousBackground = studentAttributes.previousBackground;
-    this.className = studentAttributes.className;
-    this.favSubjects = studentAttributes.favSubjects;
+class Instructor extends Person {
+  constructor(instructorAttributes) {
+    super(instructorAttributes);
+    this.previousBackground = instructorAttributes.previousBackground;
+    this.className = instructorAttributes.className;
+    this.favSubjects = instructorAttributes.favSubjects;
   }
 
   listsSubjects() {
@@ -82,13 +106,27 @@ class Student extends Person {
   }
 
   praAssignment() {
-    return `Student ${this.name} has submitted a PR for `
+    return `Student ${this.name} has submitted a PR for ${this.subject}`
   }
 
   sprintChallenge() {
-    return `Student ${this.name} has begun sprint challenge on subject `
+    return `Student ${this.name} has begun sprint challenge on ${this.subject} `
   }
 }
+
+const mickey = new Instructor({
+  name: 'Fred',
+  location: 'Bedrock',
+  age: 37,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`,
+  className: 007,
+  favInstructor: 'Gabe',
+});
+
+console.log(mickey.sprintChallenge());
 
 
 
@@ -98,8 +136,10 @@ class Student extends Person {
 // gradClassName: i.e. CS1
 // favInstructor: i.e. Sean
 // ProjectManagers have the following Methods:
-// standUp a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-// debugsCode a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
+// standUp a method that takes in a slack channel and logs `{name} announces 
+//to {channel}, @channel standy times!​​​​​
+// debugsCode a method that takes in a student object and a subject
+// and logs out {name} debugs {student.name}'s code on {subject}
 
 class ProjectManagers extends Instructor {
   constructor(pmAttributes) {
@@ -113,7 +153,38 @@ class ProjectManagers extends Instructor {
   }
 
   debugsCode() {
-    return `${this.name} debugs ${this.name} code on subject `
+    return `${this.name} debugs ${this.name} code on ${this.subject} `
   }
 
 }
+
+
+const frank = new ProjectManagers({
+  name: 'Frank',
+  location: 'Bedrock',
+  age: 37,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`,
+  className: 007,
+  favInstructor: 'Gabe',
+
+
+
+});
+console.log(frank.debugsCode());
+
+
+const michael = new ProjectManagers({
+  name: 'Michael',
+  location: 'Bedrock',
+  age: 37,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the homies`,
+  subject:'web-programming'
+});
+
+console.log(michael.standUp());

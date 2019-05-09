@@ -169,8 +169,6 @@ The console.log() statements should still return what is expected of them.
   
   
   
-  
-  
   const swordsman = new Humanoid({
     createdAt: new Date(),
     dimensions: {
