@@ -31,9 +31,9 @@ const jimmy = new Person({
   catchPhrase: `Don't forget the homies`,
   specialty: 'C',
   grade: 'b',
-  favInstructor:'Jimmy',
-  subject:'css',
-  favSubjects:'everything',
+  favInstructor: 'Jimmy',
+  subject: 'css',
+  favSubjects: 'everything',
 });
 
 console.log(jimmy.speak());
@@ -195,9 +195,9 @@ const michael = new ProjectManagers({
   specialty: 'Front-end',
   catchPhrase: `Don't forget the stove in the oven`,
   subject: 'web-programming',
-  className:919,
+  className: 919,
   favSubjects: 'shadowing',
-  grade:'only the best grade',
+  grade: 'only the best grade',
   favInstructor: 'Jake',
 });
 
