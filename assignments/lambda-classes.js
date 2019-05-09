@@ -21,20 +21,22 @@ class Person {
 
 }
 
-
 const jimmy = new Person({
-  name: 'Jimmy',
+  name: 'Jackie',
   location: 'Bedrock',
   age: 44,
   gender: 'male',
   favLanguage: 'JavaScript',
   specialty: 'Front-end',
   catchPhrase: `Don't forget the homies`,
-  specialty:'C',
+  specialty: 'C',
   grade: 'b',
+  favInstructor:'Jimmy',
+  subject:'css',
+  favSubjects:'everything',
 });
 
-console.log(jimmy.speak);
+console.log(jimmy.speak());
 
 // Now that we have a Person as our base class, we'll build our Instructor class.
 // Instructor uses the same attributes that have been set up by Person
@@ -55,7 +57,7 @@ class Student extends Person {
     this.specialty = studentAttributes.specialty;
     this.favLanguage = studentAttributes.favLanguage;
     this.catchPhrase = studentAttributes.catchPhrase;
-    this.subject=studentAttributes.subject;
+    this.subject = studentAttributes.subject;
   }
 
   demo() {
@@ -66,14 +68,18 @@ class Student extends Person {
 
 const fox = new Student({
   name: 'Rocky',
-  location: 'Bedrock',
-  age: 44,
-  gender: 'male',
+  location: 'Moon',
+  age: 34,
+  gender: 'alien',
   favLanguage: 'JavaScript',
   specialty: 'Front-end',
-  catchPhrase: `Don't forget the homies`,
-  specialty:'C',
+  catchPhrase: `Don't forget the planet earth`,
+  specialty: 'C++',
   grade: 'b',
+  className: 007,
+  favInstructor: 'Gabe',
+  subject: 'hacking',
+  favSubjects: 'Php',
 });
 
 console.log(fox.demo());
@@ -93,7 +99,7 @@ console.log(fox.demo());
 // has begun sprint challenge on {subject}
 
 
-class Instructor extends Person {
+class Instructor extends Student {
   constructor(instructorAttributes) {
     super(instructorAttributes);
     this.previousBackground = instructorAttributes.previousBackground;
@@ -121,9 +127,12 @@ const mickey = new Instructor({
   gender: 'male',
   favLanguage: 'JavaScript',
   specialty: 'Front-end',
-  catchPhrase: `Don't forget the homies`,
+  catchPhrase: `Don't forget to eat man`,
   className: 007,
   favInstructor: 'Gabe',
+  subject: 'hacking',
+  grade: 'A',
+  favSubjects: 'Php',
 });
 
 console.log(mickey.sprintChallenge());
@@ -153,26 +162,27 @@ class ProjectManagers extends Instructor {
   }
 
   debugsCode() {
-    return `${this.name} debugs ${this.name} code on ${this.subject} `
+    return `${this.name} debugs ${this.subject} code on ${this.subject} `
   }
 
 }
 
 
 const frank = new ProjectManagers({
-  name: 'Frank',
+  name: 'Bob',
   location: 'Bedrock',
-  age: 37,
+  age: 20,
   gender: 'male',
   favLanguage: 'JavaScript',
-  specialty: 'Front-end',
-  catchPhrase: `Don't forget the homies`,
+  specialty: 'Full-Stack',
+  catchPhrase: `Don't forget the coffee`,
   className: 007,
   favInstructor: 'Gabe',
-
-
-
+  subject: 'SQL Injection',
+  grade: 'A',
+  favSubjects: 'C#',
 });
+
 console.log(frank.debugsCode());
 
 
@@ -180,11 +190,15 @@ const michael = new ProjectManagers({
   name: 'Michael',
   location: 'Bedrock',
   age: 37,
-  gender: 'male',
+  gender: 'alien',
   favLanguage: 'JavaScript',
   specialty: 'Front-end',
-  catchPhrase: `Don't forget the homies`,
-  subject:'web-programming'
+  catchPhrase: `Don't forget the stove in the oven`,
+  subject: 'web-programming',
+  className:919,
+  favSubjects: 'shadowing',
+  grade:'only the best grade',
+  favInstructor: 'Jake',
 });
 
 console.log(michael.standUp());
