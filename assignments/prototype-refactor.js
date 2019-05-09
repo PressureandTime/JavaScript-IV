@@ -64,23 +64,35 @@ The console.log() statements should still return what is expected of them.
     * takeDamage() // prototype method -> returns the string '<object name> took damage.'
     * should inherit destroy() from GameObject's prototype
   */
-  function CharacterStats(characterdata) {
-    GameObject.call(this, characterdata);
-    this.healthPoints = characterdata.healthPoints;
-  }
+//   function CharacterStats(characterdata) {
+//     GameObject.call(this, characterdata);
+//     this.healthPoints = characterdata.healthPoints;
+//   }
   
-  CharacterStats.prototype = Object.create(GameObject.prototype);
-  console.log(CharacterStats);
-  
+//   CharacterStats.prototype = Object.create(GameObject.prototype);
+//   console.log(CharacterStats);
+
+
+ class CharacterStats extends GameObject {
+     constructor(healthPoints){
+         super(createdAt,name,dimensions);
+         this.healthPoints = healthPoints;
+     }
+
+     takeDamage (){
+        return `${this.name} took damage`;
+    }
+ }
+ 
   // const x = new CharacterStats({});
   // console.log(x);
   //const character = new GameObject();
   
   //console.log(character);
   
-  CharacterStats.prototype.takeDamage = function () {
-    return `${this.name} took damage.`;
-  }
+//   CharacterStats.prototype.takeDamage = function () {
+//     return `${this.name} took damage.`;
+//   }
   
   
   /*
@@ -93,20 +105,36 @@ The console.log() statements should still return what is expected of them.
     * should inherit takeDamage() from CharacterStats
   */
   
-  function Humanoid(humanoiddata) {
-    CharacterStats.call(this, humanoiddata);
-    this.team = humanoiddata.team;
-    this.weapons = humanoiddata.weapons;
-    this.language = humanoiddata.language;
-    // console.log('blablbla',humanoiddata);
-  }
+//   function Humanoid(humanoiddata) {
+//     CharacterStats.call(this, humanoiddata);
+//     this.team = humanoiddata.team;
+//     this.weapons = humanoiddata.weapons;
+//     this.language = humanoiddata.language;
+//     // console.log('blablbla',humanoiddata);
+//   }
   
-  Humanoid.prototype = Object.create(CharacterStats.prototype);
+//   Humanoid.prototype = Object.create(CharacterStats.prototype);
   
-  Humanoid.prototype.greet = function () {
-    return `${this.team} offers a greeting in ${this.language}`;
-  }
+//   Humanoid.prototype.greet = function () {
+//     return `${this.team} offers a greeting in ${this.language}`;
+//   }
   
+ class Humanoid extends GameObject{
+    constructor(team,weapons,language){
+        super(healthPoints);
+        this.team = team;
+        this.weapons = weapons;
+        this.language = language;
+    }
+
+    greet (){
+       return `${this.name} offers a greeting in ${this.language}`;
+   }
+
+ }
+
+
+
   
   // const testing = new Humanoid();
   // console.log(testing);
