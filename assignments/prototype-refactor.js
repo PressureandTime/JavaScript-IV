@@ -74,9 +74,9 @@ The console.log() statements should still return what is expected of them.
 
 
  class CharacterStats extends GameObject {
-     constructor(healthPoints){
-         super(createdAt,name,dimensions);
-         this.healthPoints = healthPoints;
+     constructor(characterAttributes){
+         super(characterAttributes);
+         this.healthPoints = characterAttributes.healthPoints;
      }
 
      takeDamage (){
@@ -119,12 +119,12 @@ The console.log() statements should still return what is expected of them.
 //     return `${this.team} offers a greeting in ${this.language}`;
 //   }
   
- class Humanoid extends GameObject{
-    constructor(team,weapons,language){
-        super(healthPoints);
-        this.team = team;
-        this.weapons = weapons;
-        this.language = language;
+ class Humanoid extends CharacterStats{
+    constructor(humanoidAttributes){
+        super(humanoidAttributes);
+        this.team = humanoidAttributes.team;
+        this.weapons = humanoidAttributes.weapons;
+        this.language = humanoidAttributes.language;
     }
 
     greet (){
@@ -132,6 +132,7 @@ The console.log() statements should still return what is expected of them.
    }
 
  }
+
 
 
 
