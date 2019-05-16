@@ -51,7 +51,7 @@ console.log(jimmy.speak());
 // and logs out '{student.name} receives a perfect score on {subject}'
 
 
-class Student extends Person {
+class Instructor extends Person {
   constructor(studentAttributes) {
     super(studentAttributes);
     this.specialty = studentAttributes.specialty;
@@ -63,26 +63,13 @@ class Student extends Person {
   demo() {
     return `Today we are learning about ${this.subject} and ${this.name}`;
   }
+
+  grade() {
+    return `receives a ${this.name} and a ${this.subject}  a perfect score on`
+  }
 }
 
 
-const fox = new Student({
-  name: 'Rocky',
-  location: 'Moon',
-  age: 34,
-  gender: 'alien',
-  favLanguage: 'JavaScript',
-  specialty: 'Front-end',
-  catchPhrase: `Don't forget the planet earth`,
-  specialty: 'C++',
-  grade: 'b',
-  className: 007,
-  favInstructor: 'Gabe',
-  subject: 'hacking',
-  favSubjects: 'Php',
-});
-
-console.log(fox.demo());
 
 
 
@@ -99,7 +86,7 @@ console.log(fox.demo());
 // has begun sprint challenge on {subject}
 
 
-class Instructor extends Student {
+class Student extends Person {
   constructor(instructorAttributes) {
     super(instructorAttributes);
     this.previousBackground = instructorAttributes.previousBackground;
@@ -115,28 +102,10 @@ class Instructor extends Student {
     return `Student ${this.name} has submitted a PR for ${this.subject}`
   }
 
-  sprintChallenge() {
+  sprintChallenge(subject) {
     return `Student ${this.name} has begun sprint challenge on ${this.subject} `
   }
 }
-
-const mickey = new Instructor({
-  name: 'Fred',
-  location: 'Bedrock',
-  age: 37,
-  gender: 'male',
-  favLanguage: 'JavaScript',
-  specialty: 'Front-end',
-  catchPhrase: `Don't forget to eat man`,
-  className: 007,
-  favInstructor: 'Gabe',
-  subject: 'hacking',
-  grade: 'A',
-  favSubjects: 'Php',
-});
-
-console.log(mickey.sprintChallenge());
-
 
 
 // Now that we have instructors and students, we'd be nowhere without our PM's
@@ -166,7 +135,6 @@ class ProjectManagers extends Instructor {
   }
 
 }
-
 
 const frank = new ProjectManagers({
   name: 'Bob',
@@ -201,4 +169,39 @@ const michael = new ProjectManagers({
   favInstructor: 'Jake',
 });
 
+
+const fox = new Student({
+  name: 'Rocky',
+  location: 'Moon',
+  age: 34,
+  gender: 'alien',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the planet earth`,
+  specialty: 'C++',
+  grade: 'b',
+  className: 007,
+  favInstructor: 'Gabe',
+  subject: 'Database maintance',
+  favSubjects: 'Php',
+});
+
+
+const mickey = new Instructor({
+  name: 'Fred',
+  location: 'Bedrock',
+  age: 37,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget to eat man`,
+  className: 007,
+  favInstructor: 'Gabe',
+  subject: 'hacking',
+  grade: 'A',
+  favSubjects: 'Php',
+});
+
+
 console.log(michael.standUp());
+console.log(fox.sprintChallenge());
