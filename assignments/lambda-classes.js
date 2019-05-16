@@ -136,6 +136,58 @@ class ProjectManagers extends Instructor {
 
 }
 
+
+const phoenix = new Person({
+  name: 'Rodney',
+  location: 'California',
+  age: 40,
+  gender: 'male',
+  favLanguage: 'Python',
+  specialty: 'backend',
+  catchPhrase: `Don't forget the coffee`,
+  className: 245,
+  favInstructor: 'Francis',
+  subject: 'HTML5',
+  grade: 'B',
+  favSubjects: 'C#',
+});
+
+
+const logan = new Person({
+  name: 'Rodney',
+  location: 'California',
+  age: 40,
+  gender: 'male',
+  favLanguage: 'Python',
+  specialty: 'backend',
+  catchPhrase: `Don't forget the coffee`,
+  className: 245,
+  favInstructor: 'Francis',
+  subject: 'HTML5',
+  grade: 'B',
+  favSubjects: 'C#',
+});
+
+
+
+const daniel = new Student({
+  name: 'Danny',
+  location: 'italy',
+  age: 24,
+  gender: 'male',
+  favLanguage: 'C++',
+  specialty: 'Full-Stack',
+  catchPhrase: `Don't forget the coffee`,
+  className: 111,
+  favInstructor: 'Gabe',
+  subject: 'SQL Injection',
+  grade: 'A',
+  favSubjects: 'C#',
+});
+
+
+
+
 const frank = new ProjectManagers({
   name: 'Bob',
   location: 'California',
@@ -151,7 +203,8 @@ const frank = new ProjectManagers({
   favSubjects: 'C#',
 });
 
-console.log(frank.debugsCode());
+
+
 
 
 const michael = new ProjectManagers({
@@ -187,6 +240,27 @@ const fox = new Student({
 });
 
 
+const travis = new Student({
+  name: 'Rocky',
+  location: 'Moon',
+  age: 34,
+  gender: 'alien',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget the planet earth`,
+  specialty: 'C++',
+  grade: 'b',
+  className: 007,
+  favInstructor: 'Gabe',
+  subject: 'Database maintance',
+  favSubjects: 'Php',
+});
+
+
+
+
+
+
 const mickey = new Instructor({
   name: 'Fred',
   location: 'Bedrock',
@@ -203,5 +277,29 @@ const mickey = new Instructor({
 });
 
 
+
+const chuck = new Instructor({
+  name: 'Fred',
+  location: 'Bedrock',
+  age: 37,
+  gender: 'male',
+  favLanguage: 'JavaScript',
+  specialty: 'Front-end',
+  catchPhrase: `Don't forget to eat man`,
+  className: 007,
+  favInstructor: 'Gabe',
+  subject: 'hacking',
+  grade: 'A',
+  favSubjects: 'Php',
+});
+
+
+
 console.log(michael.standUp());
 console.log(fox.sprintChallenge());
+console.log(frank.debugsCode());
+console.log(travis.sprintChallenge());
+console.log(mickey.demo());
+console.log(mickey.grade());
+console.log(logan.speak());
+console.log(phoenix.speak());
