@@ -170,7 +170,7 @@ class ProjectManagers extends Instructor {
 
 const frank = new ProjectManagers({
   name: 'Bob',
-  location: 'Bedrock',
+  location: 'California',
   age: 20,
   gender: 'male',
   favLanguage: 'JavaScript',
@@ -188,7 +188,7 @@ console.log(frank.debugsCode());
 
 const michael = new ProjectManagers({
   name: 'Michael',
-  location: 'Bedrock',
+  location: 'Kings Landing',
   age: 37,
   gender: 'alien',
   favLanguage: 'JavaScript',

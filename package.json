@@ -1,0 +1,26 @@
+{
+  "name": "JavaScript-IV",
+  "version": "1.0.0",
+  "description": "This challenge focuses on classes in JavaScript using the new `class` keyword.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PressureandTime/JavaScript-IV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PressureandTime/JavaScript-IV/issues"
+  },
+  "homepage": "https://github.com/PressureandTime/JavaScript-IV#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^17.1.0"
+  }
+}
